@@ -1,0 +1,27 @@
+# coding: utf-8
+import numpy as np
+import matplotlib
+import matplotlib.pyplot as plt
+from pandas import *
+import csv
+with open ("E:/6Machine Learning/Deep learning/ML2017/hw1.1/hw1/data/train.csv", "r") as csvfile:
+    read = csv.DictReader(csvfile)
+    price = [row["price"] for row in read]
+    a = len(price)
+with open("E:/6Machine Learning/Deep learning/ML2017/hw1.1/hw1/data/train.csv", "r") as csvfile:
+    read = csv.DictReader(csvfile)
+    sqft_living=[row["sqft_living"] for row in read]
+    b=len(sqft_living)
+# plt.figure(1)
+# plt.plot(price, sqftliving)
+# plt.show()
+print(b)
+print(a)
+print(price)
+print(sqft_living)
+f1=plt.figure(1)
+plt.subplot(211)
+plt.scatter(price,sqft_living)
+plt.subplot(212)
+plt.scatter(sqft_living,price)
+plt.show()
